@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import classes from "../../styles/event-item.module.css";
+import classes from "./event-item.module.css";
 
 export default function EventItem(props) {
   const { title, image, date, location, id } = props;
