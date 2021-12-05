@@ -1,7 +1,13 @@
+import EventLogistics from "../../components/event-detail/event-logistics";
+import EventList from "../../components/events/event-list";
+import { getAllEvents } from "../../dummy-data";
+
 export default function AllMeetupsPage() {
+  const events = getAllEvents();
+
   return (
     <div>
-      <h1>All Meetups</h1>
+      <EventList items={events}></EventList>
     </div>
   );
 }

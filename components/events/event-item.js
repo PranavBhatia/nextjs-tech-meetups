@@ -7,7 +7,7 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 
 import classes from "./event-item.module.css";
 
-export default function EventItem(props) {
+function EventItem(props) {
   const { title, image, date, location, id } = props;
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -48,3 +48,5 @@ export default function EventItem(props) {
     </li>
   );
 }
+
+export default EventItem;
