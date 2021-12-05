@@ -1,13 +1,18 @@
-import EventLogistics from "../../components/event-detail/event-logistics";
-import EventList from "../../components/events/event-list";
-import { getAllEvents } from "../../dummy-data";
+import { Fragment } from "react";
 
-export default function AllMeetupsPage() {
+import { getAllEvents } from "../../dummy-data";
+import EventList from "../../components/events/event-list";
+import EventsSearch from "../../components/events/events-search";
+
+function AllMeetupsPage() {
   const events = getAllEvents();
 
   return (
-    <div>
+    <Fragment>
+      <EventsSearch />
       <EventList items={events}></EventList>
-    </div>
+    </Fragment>
   );
 }
+
+export default AllMeetupsPage;
