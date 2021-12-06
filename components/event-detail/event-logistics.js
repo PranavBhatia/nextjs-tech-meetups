@@ -5,7 +5,7 @@ import DateIcon from "../icons/date-icon";
 import LogisticsItem from "./logistics-item";
 import classes from "./event-logistics.module.css";
 
-function EventLogistics(props) {
+const EventLogistics = (props) => {
   const { date, address, image, imageAlt } = props;
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -36,6 +36,6 @@ function EventLogistics(props) {
       </ul>
     </section>
   );
-}
+};
 
 export default EventLogistics;

@@ -5,15 +5,20 @@ import { getEventById } from "../../dummy-data";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventContent from "../../components/event-detail/event-content";
 import EventLogistics from "../../components/event-detail/event-logistics";
+import ErrorAlert from "../../components/ui/error-alert";
 
-export default function MeetupDetailsPage() {
+const MeetupDetailsPage = () => {
   const { query } = useRouter();
 
   const eventId = query.eventId;
   const event = getEventById(eventId);
 
   if (!event) {
-    return <p>No event found</p>;
+    return (
+      <ErrorAlert>
+        <p>No event found</p>
+      </ErrorAlert>
+    );
   }
 
   return (
@@ -32,4 +37,6 @@ export default function MeetupDetailsPage() {
       </EventContent>
     </Fragment>
   );
-}
+};
+
+export default MeetupDetailsPage;
